@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import java.lang.String?>
@@ -14,7 +15,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="backround-pane" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="backround-pane" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerLogin">
    <children>
       <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
          <columnConstraints>
@@ -37,7 +38,7 @@
             </ImageView>
          </children>
       </GridPane>
-      <JFXTextField focusColor="WHITE" labelFloat="true" maxWidth="1.7976931348623157E308" promptText="Usuario:" unFocusColor="WHITE" VBox.vgrow="ALWAYS">
+      <JFXTextField fx:id="txtUsuario" focusColor="#0011ff" labelFloat="true" maxWidth="1.7976931348623157E308" promptText="Usuario:" unFocusColor="#0011ff" VBox.vgrow="ALWAYS">
          <VBox.margin>
             <Insets bottom="30.0" left="50.0" right="50.0" top="30.0" />
          </VBox.margin>
@@ -47,11 +48,11 @@
             <String fx:value="visible-lg" />
          </styleClass>
       </JFXTextField>
-      <JFXTextField focusColor="WHITE" labelFloat="true" maxWidth="1.7976931348623157E308" promptText="Contraseña:" unFocusColor="WHITE" VBox.vgrow="ALWAYS">
+      <JFXPasswordField fx:id="txtPassword" focusColor="#0011ff" labelFloat="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="Contraseña" unFocusColor="#0011ff" VBox.vgrow="ALWAYS">
          <VBox.margin>
             <Insets bottom="30.0" left="50.0" right="50.0" top="30.0" />
          </VBox.margin>
-      </JFXTextField>
+      </JFXPasswordField>
       <HBox alignment="CENTER">
          <children>
             <JFXButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Salir" HBox.hgrow="ALWAYS">
@@ -62,14 +63,14 @@
                   <FontAwesomeIconView glyphName="CLOSE" />
                </graphic>
                <styleClass>
-                  <String fx:value="btn" />
-                  <String fx:value="hidden-sm" />
+                  <String fx:value="btn-desactive" />
+                  <String fx:value="hidden-lg" />
                </styleClass>
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
             </JFXButton>
-            <JFXButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Ingresar" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+            <JFXButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#clickAcceso" text="Ingresar" textAlignment="CENTER" HBox.hgrow="ALWAYS">
                <HBox.margin>
                   <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
                </HBox.margin>
@@ -77,8 +78,8 @@
                   <FontAwesomeIconView glyphName="KEY" />
                </graphic>
                <styleClass>
-                  <String fx:value="btn" />
-                  <String fx:value="hidden-sm" />
+                  <String fx:value="btn-desactive" />
+                  <String fx:value="hidden-lg" />
                </styleClass>
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
